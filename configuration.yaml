@@ -40,4 +40,10 @@ mqtt:
       qos: 0
       device_class: opening
       
-      
+
+  text:
+    - name: "last_change"
+      mode: "text"
+      state_topic: "/blixt-brokertopic"
+      command_topic: "/blixt-brokertopic"
+      value_template: "{{ value_json.trip_cause }}"
