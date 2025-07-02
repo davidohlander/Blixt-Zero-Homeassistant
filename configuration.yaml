@@ -15,17 +15,17 @@ scene: !include scenes.yaml
 mqtt:
   sensor:
     - name: "zero1_current"
-      state_topic: "/blixt-hq/kaffe-maskin/ffff3100ffffffff0084454e1b000270"
+      state_topic: "/blixt-brokertopic"
       unit_of_measurement: "ma"
       value_template: "{{ value_json.current_ma }}"
       
     - name: "zero1_voltage"
-      state_topic: "/blixt-hq/kaffe-maskin/ffff3100ffffffff0084454e1b000270"
+      state_topic: "/blixt-brokertopic"
       unit_of_measurement: "mv"
       value_template: "{{ value_json.voltage_mv }}"
       
     - name: "zero1_frequency"
-      state_topic: "/blixt-hq/kaffe-maskin/ffff3100ffffffff0084454e1b000270"
+      state_topic: "/blixt-brokertopic"
       unit_of_measurement: "mhz"
       value_template: "{{ value_json.frequency_mhz }}"
 
@@ -33,7 +33,7 @@ mqtt:
   binary_sensor:
     - name: "zero1_state"
       unique_id: zero1_state
-      state_topic: "/blixt-hq/kaffe-maskin/ffff3100ffffffff0084454e1b000270"
+      state_topic: "/blixt-brokertopic"
       value_template: "{{ value_json.device_state }}"
       payload_on: "ZC_DEVICE_STATE_OPENED"
       payload_off: "ZC_DEVICE_STATE_CLOSED"
