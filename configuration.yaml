@@ -40,23 +40,4 @@ mqtt:
       qos: 0
       device_class: opening
       
-       
-  button:
-    - name: "boop"
-      unique_id: boop_btn
-      command_topic: "/homeassistant"
-      payload_press: "boop"
-      qos: 0
-      retain: false
-      entity_category: "config"
-      device_class: "restart"
-      
-    - name: "beep"
-      unique_id: beep_btn
-      command_topic: "/homeassistant"
-      payload_press: "beep"
-      qos: 0
-      retain: false
-      entity_category: "config"
-      device_class: "restart"
       
