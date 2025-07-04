@@ -46,7 +46,7 @@ State template: {{ states('sensor.zero1_frequency') | float * 0.001 }}
   
 
 sensor.zero1_power - measures power consumption in W of zero1 by multiplying data from zero1_current and zero1_voltage.  
-State template: {{ states('sensor.zero1_current') | float * states('sensor.zero1_voltage')| float * 0.001*0.001}}
+State template: {{ states('sensor.zero1_current') | float * states('sensor.zero1_voltage')| float * 0.001*0.001 }}
   
 
 sensor.zero1_price - measures the cost of zero1 since set-up in SEK by multiplying data from zero1_energy and nordpool.  
