@@ -9,6 +9,7 @@ Configuration.yaml is the yaml file which contain all the configurations made.
 
 MQTT Sensors:
 - Sensors:
+
 sensor.zero1_current - measures the raw current from the zero1 broker in mA.
 sensor.zero1_voltage - measures the raw voltage from the zero1 broker in mV.
 sensor.zero1_frequency - measures the raw frequency from the zero1 broker in mHz.
@@ -18,6 +19,7 @@ sensor.zero1_frequency - measures the raw frequency from the zero1 broker in mHz
   
 Helpers:
 - Template sensors:
+
   sensor.zero1_current_2 - measures current from zero1_current and displays it in A.
   State template: {{ states('sensor.zero1_current') | float * 0.001}}
 
