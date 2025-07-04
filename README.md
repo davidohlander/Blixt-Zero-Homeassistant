@@ -61,3 +61,9 @@ sensor.zero1_energy - measures energy consumption of zero1 in kWh by taking the 
 sensor.elkostnad_manad - displays the energy price of zero1 monthly.
 
 sensor.energi_manad - displays the energy consumption of zero1 monthly.
+
+## Automations:
+
+zero1_closed notification - Sends a notification to a device when zero1_state changes to closed
+
+zero1_open notification - Sends a notification to a device when zero1_state changes to open.
