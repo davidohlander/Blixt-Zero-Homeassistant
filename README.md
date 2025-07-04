@@ -11,8 +11,11 @@ MQTT Sensors:
 - Sensors:
 
 sensor.zero1_current - measures the raw current from the zero1 broker in mA.
+
 sensor.zero1_voltage - measures the raw voltage from the zero1 broker in mV.
+
 sensor.zero1_frequency - measures the raw frequency from the zero1 broker in mHz.
+
 
 - Binary sensors:
   zero1_state - displays the current state (open/closed) of zero1.
