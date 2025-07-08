@@ -1,6 +1,6 @@
 # Blixt-Zero-Homeassistant
 
-This is a documentation of the homeassistant setup for blixtzero.
+This is a documentation of the homeassistant setup for blixtzero. All sensors named zero1 can be duplicated to create an input for multiple blixt-zeros.
  
 ## Files:
 
@@ -31,6 +31,10 @@ zero1_state - displays the current state (open/closed) of zero1.
 sensor.nordpool_kwh_se1_sek_3_10_025 - measures current energyprices in zone 3 of Sweden in SEK/kWh.
   
 ## Helpers:
+
+Helpers are tools that help convert the raw data to presentable values by doing calculations. Here, they are used to change the unit correctly and calculate power and energy consumption.
+
+
 - Template sensors:
 
 sensor.zero1_current_2 - measures current from zero1_current and displays it in A.  
@@ -41,7 +45,7 @@ sensor.zero1_voltage_2 - measures voltage from zero1_current and displays it in 
 State template: {{ states('sensor.zero1_voltage') | float * 0.001 }}
   
 
-sensor.zero1_frequency - measures frequency from zero1_current and displays it in Hz.  
+sensor.zero1_frequency_2 - measures frequency from zero1_current and displays it in Hz.  
 State template: {{ states('sensor.zero1_frequency') | float * 0.001 }}
   
 
@@ -58,9 +62,9 @@ sensor.zero1_energy - measures energy consumption of zero1 in kWh by taking the 
 
 - Utility meters:
 
-sensor.elkostnad_manad - displays the energy price of zero1 monthly.
+sensor.zero1_elkostnad_manad - displays the energy price of zero1 monthly by taking zero1_price and resetting on monthly cycle.
 
-sensor.energi_manad - displays the energy consumption of zero1 monthly.
+sensor.zero1_energi_manad - displays the energy consumption of zero1 monthly by taking zero1_energy and resetting on a monthly cycle.
 
 ## Automations:
 
