@@ -1,0 +1,221 @@
+views:
+  - title: Blixt Office
+    sections:
+      - type: grid
+        cards:
+          - type: heading
+            heading_style: title
+            icon: mdi:lightning-bolt
+            heading: Zero1
+          - graph: line
+            type: sensor
+            detail: 1
+            entity: sensor.zero1_power
+            name: Effekt
+            unit: W
+            limits: {}
+          - graph: line
+            type: sensor
+            entity: sensor.zero1_energi_manad
+            detail: 1
+            icon: mdi:lightning-bolt
+            name: Energi (månad)
+          - graph: line
+            type: sensor
+            entity: sensor.nordpool_kwh_se1_sek_3_10_025
+            icon: mdi:currency-usd
+            name: Elpris
+          - graph: line
+            type: sensor
+            entity: sensor.zero1_elkostnad_manad
+            detail: 1
+            icon: mdi:cash
+            name: Elkostnad (månad)
+          - graph: line
+            type: sensor
+            entity: sensor.zero1_current_2
+            detail: 1
+            icon: mdi:current-ac
+            unit: A
+            name: Ström
+          - graph: line
+            type: sensor
+            entity: sensor.zero1_voltage_2
+            detail: 1
+            icon: mdi:flash-triangle
+            unit: V
+            name: Spänning
+          - type: gauge
+            entity: sensor.zero1_voltage_2
+            min: 100
+            tap_action:
+              action: none
+            needle: true
+            segments:
+              - from: 0
+                color: crimson
+              - from: 138
+                color: orange
+              - from: 184
+                color: forestgreen
+              - from: 276
+                color: orange
+              - from: 322
+                color: crimson
+            unit: V
+            max: 360
+            grid_options:
+              columns: 6
+              rows: auto
+            name: Voltmätare
+          - type: gauge
+            entity: sensor.zero1_frequency_2
+            min: 49.4
+            tap_action:
+              action: none
+            needle: true
+            segments:
+              - from: 0
+                color: crimson
+              - from: 49.5
+                color: orange
+              - from: 49.9
+                color: forestgreen
+              - from: 50.1
+                color: orange
+              - from: 50.5
+                color: crimson
+            unit: hz
+            max: 50.6
+            grid_options:
+              columns: 6
+              rows: auto
+            name: Frekvensmätare
+          - type: entity
+            entity: binary_sensor.zero1_state
+            state_color: true
+            grid_options:
+              columns: 12
+              rows: 2
+            name: Status
+          - type: entity
+            entity: text.last_change
+            grid_options:
+              columns: 12
+              rows: 2
+            name: Status förändring
+        column_span: 1
+      - type: grid
+        cards:
+          - type: heading
+            heading_style: title
+            heading: Zero2
+            icon: mdi:lightning-bolt
+          - graph: line
+            type: sensor
+            entity: sensor.zero2_power
+            detail: 1
+            unit: W
+            name: Effekt
+          - graph: line
+            type: sensor
+            entity: sensor.zero2_energi_manad
+            detail: 1
+            name: Energi (månad)
+            icon: mdi:lightning-bolt
+          - graph: line
+            type: sensor
+            entity: sensor.nordpool_kwh_se1_sek_3_10_025
+            detail: 1
+            name: Elpris
+          - graph: line
+            type: sensor
+            entity: sensor.zero2_elkostnad_manad
+            detail: 1
+            name: Elkostnad (månad)
+            icon: mdi:cash
+          - graph: line
+            type: sensor
+            entity: sensor.zero2_current_2
+            detail: 1
+            unit: A
+            name: Ström
+          - graph: line
+            type: sensor
+            entity: sensor.zero2_voltage_2
+            detail: 1
+            unit: V
+            name: Spänning
+          - type: gauge
+            entity: sensor.zero2_voltage_2
+            min: 100
+            tap_action:
+              action: none
+            needle: true
+            segments:
+              - from: 0
+                color: crimson
+              - from: 138
+                color: orange
+              - from: 184
+                color: forestgreen
+              - from: 276
+                color: orange
+              - from: 322
+                color: crimson
+            unit: V
+            max: 360
+            grid_options:
+              columns: 6
+              rows: auto
+            name: Voltmätare
+          - type: gauge
+            entity: sensor.zero2_frequency_2
+            min: 49.4
+            tap_action:
+              action: none
+            needle: true
+            segments:
+              - from: 0
+                color: crimson
+              - from: 49.5
+                color: orange
+              - from: 49.9
+                color: forestgreen
+              - from: 50.1
+                color: orange
+              - from: 50.5
+                color: crimson
+            unit: hz
+            max: 50.6
+            grid_options:
+              columns: 6
+              rows: auto
+            name: Frekvensmätare
+          - type: entity
+            entity: binary_sensor.zero2_state
+            name: Status
+            state_color: true
+            grid_options:
+              columns: 12
+              rows: 2
+          - type: entity
+            entity: text.zero2_last_change
+            grid_options:
+              columns: 12
+              rows: 2
+    header:
+      card:
+        type: markdown
+        content: |
+          Blixt zero enheter
+        text_only: true
+    background:
+      opacity: 33
+      alignment: center
+      size: auto
+      repeat: repeat
+      attachment: fixed
+    cards: []
+    type: sections
+    max_columns: 4
