@@ -8,7 +8,7 @@ Add-ons.md contain the required add-ons from homeassistant which can be download
 
 HACS.md contain the required add-ons from the HACS (Home assistant community store) which in and of itself is a add-on.
 
-Configuration.yaml is the yaml file which contain all the configurations made.
+Configuration.yaml is the yaml file which contains all the configurations made.
 
 
 ## MQTT Sensors:
