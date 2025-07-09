@@ -1,4 +1,3 @@
-
 # Loads default set of integrations. Do not remove.
 default_config:
 
@@ -10,40 +9,80 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
-
 #mqtt entities list
 mqtt:
   sensor:
     - name: "zero1_current"
-      state_topic: "/blixt-brokertopic"
+      state_topic: "/blixt-topic zero1"
       unit_of_measurement: "ma"
       value_template: "{{ value_json.current_ma }}"
-      
+
     - name: "zero1_voltage"
-      state_topic: "/blixt-brokertopic"
+      state_topic: "/blixt-topic zero1"
       unit_of_measurement: "mv"
       value_template: "{{ value_json.voltage_mv }}"
-      
+
     - name: "zero1_frequency"
-      state_topic: "/blixt-brokertopic"
+      state_topic: "/blixt-topic zero1"
       unit_of_measurement: "mhz"
       value_template: "{{ value_json.frequency_mhz }}"
 
+    - name: "zero2_current"
+      state_topic: "/blixt-topic zero2"
+      unit_of_measurement: "ma"
+      value_template: "{{ value_json.current_ma }}"
+
+    - name: "zero2_voltage"
+      state_topic: "/blixt-topic zero2"
+      unit_of_measurement: "mv"
+      value_template: "{{ value_json.voltage_mv }}"
+
+    - name: "zero2_frequency"
+      state_topic: "/blixt-topic zero2"
+      unit_of_measurement: "mhz"
+      value_template: "{{ value_json.frequency_mhz }}"
 
   binary_sensor:
     - name: "zero1_state"
       unique_id: zero1_state
-      state_topic: "/blixt-brokertopic"
+      state_topic: "/blixt-topic zero1"
       value_template: "{{ value_json.device_state }}"
       payload_on: "ZC_DEVICE_STATE_OPENED"
       payload_off: "ZC_DEVICE_STATE_CLOSED"
       qos: 0
       device_class: opening
-      
+
+    - name: "zero2_state"
+      unique_id: zero2_state
+      state_topic: "/blixt-topic zero2"
+      value_template: "{{ value_json.device_state }}"
+      payload_on: "ZC_DEVICE_STATE_OPENED"
+      payload_off: "ZC_DEVICE_STATE_CLOSED"
+      qos: 0
+      device_class: opening
 
   text:
-    - name: "last_change"
+    - name: "zero1_last_change"
       mode: "text"
-      state_topic: "/blixt-brokertopic"
-      command_topic: "/blixt-brokertopic"
+      state_topic: "/blixt-topic zero1"
+      command_topic: "/blixt-topic zero1"
       value_template: "{{ value_json.trip_cause }}"
+
+    - name: "zero2_last_change"
+      mode: "text"
+      state_topic: "/blixt-topic zero1"
+      command_topic: "/blixt-topic zero2"
+      value_template: "{{ value_json.trip_cause }}"
+
+lovelace:
+  mode: yaml
+  resources:
+    - url: /config/www/community/mini-graph-card/mini-graph-card-bundle.js
+      type: module
+  dashboards:
+    my-dashboard:
+      mode: yaml
+      title: Blixt Office
+      icon: mdi:home
+      show_in_sidebar: true
+      filename: dashboard-test01.yaml
