@@ -1,6 +1,6 @@
 # Blixt-Zero-Homeassistant
 
-This is a documentation of the homeassistant setup for blixtzero. All sensors named zero1 can be duplicated to create an input for multiple blixt-zeros.
+This is a documentation of the homeassistant setup for blixtzero. All sensors named zero1 can be duplicated to create an input for multiple blixt-zeros. Make sure to change the device that the phone notifications are being sent to.
  
 ## Files:
 
@@ -70,6 +70,6 @@ sensor.zero1_energi_manad - displays the energy consumption of zero1 monthly by 
 
 ## Automations:
 
-zero1_closed notification - Sends a notification to a device when zero1_state changes to closed
+zero1_closed notification - Sends a notification to a device when zero1_state changes to closed. 
 
 zero1_open notification - Sends a notification to a device when zero1_state changes to open.
